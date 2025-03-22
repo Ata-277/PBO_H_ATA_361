@@ -6,7 +6,7 @@ class Pahlawan{
         this.name = name;
         this.umur = umur;
 
-    }
+    } 
 
     void Melindungi(){
         System.out.println(name + "Melidungi masyaraakat");
@@ -23,7 +23,7 @@ class Pahlawan{
 
 class Superman extends Pahlawan{
     public Superman(String name,int umur){
-        super(name, umur);
+       super( name, umur)
     }
     void Terbang(){
         System.out.println(getname() +"terbang...");
@@ -34,8 +34,9 @@ class Superman extends Pahlawan{
     }
 }
 class Spiderman extends Pahlawan{
-public Spiderman(String name,int umur){
-    super(name, umur);
+ public Spiderman(String name,int umur){
+    super(name, umur)
+ }
 }
 
     void memanjat(){
