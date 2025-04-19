@@ -36,40 +36,62 @@ class Admin extends User{
     private String username = "admin361";
     private String password = "password361";
 
-    public Admin(String nama, String nim, String username, String password){
+    public Admin(String nama,String nim){
         super(nama, nim);
-        this.username = username;
-        this.password = password;
+         
     }
+    
     @Override
     void Login(String inputusername,String inputpassword){
-        if (inputusername.equals(username) && inputpassword.equals(password)){
+        if (username.equals(inputusername) && password.equals(inputpassword)){
             displayInfo();
         } else {
             System.out.println("Login gagal! Username atau password salah.");
         }
     }
+    @Override
+    void displayInfo(){
+        System.out.println("Selamat datang " + getNama());
+        System.out.println(getNim());
+    }
 }
  class Mahasiswa extends User{
 
+    private String nama = "atha";
+    private String nim = "361";
+
     public Mahasiswa(String nama,String nim){
         super(nama, nim);
+        this.nama = nama;
+        this.nim = nim;
     }
-    public void displayInfo() {
-        System.out.println("Login Mahasiswa berhasil!");
-        super.displayInfo();
+
+    @Override
+    void Login(String inputnama,String inputnim){
+        if(inputnama.equals(nama) && inputnim.equals(nim)){
+         displayInfo();
+        } else{
+            System.out.println("Maaf coba lagi.");
+        }
     }
+    @Override
+    void displayInfo(){
+        System.out.println("Selamat datang .");
+        System.out.println("Nama : " + nama);
+        System.out.println("Nim : " + nim);
+    }
+
+     
  }
 
 public class Main {
 
     public static void main(String[] args) {
-        
+         
         Scanner scan = new Scanner(System.in);
-
-        // data admin dan mahasiswa valid
-        Admin admin = new Admin("Admin Default", "0000", "admin361", "password361");
-        Mahasiswa mahasiswa = new Mahasiswa("athallahrasyadzaidan", "202410370110361");
+        
+        Admin admin = new Admin("admi361", "Password361");
+        Mahasiswa mahasiswa = new Mahasiswa("atha", "361");
 
         System.out.println("Pilih login:");
         System.out.println("1. Admin");
